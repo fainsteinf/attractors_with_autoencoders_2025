@@ -1,2 +1,3 @@
-# attractors_with_autoencoders_2025
-Relevant codes for F. Fainstein, G. B. Mindlin, P. Groisman (2025)
+# Readme
+
+Relevant codes for F. Fainstein, G. B. Mindlin, P. Groisman. Reconstructing attractors with autoencoders. Chaos, 35(1) (2025).
