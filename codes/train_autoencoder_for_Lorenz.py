@@ -14,13 +14,12 @@ import time
 
 
 #Define Sine activation subclass
-class Sin(torch.nn.Module):  #Esto dice que tiene todas las mismas utilidades que torch.nn.Module
+class Sin(torch.nn.Module):  
     def forward(self, x):
         return torch.sin(x)
 
 
 # Creating a PyTorch class
-# 28*28 ==> 9 ==> 28*28
 class AE(torch.nn.Module):
     def __init__(self):
         super().__init__() 
@@ -77,7 +76,6 @@ X_2 -= np.mean(X_2,axis=0)
 print(X_2.shape)
 
 frame_rate = 1
-#El tamaño de train size:
 train_size = int( 30000 / frame_rate )
 
 #Split train and test
@@ -97,7 +95,7 @@ lr = 10**-4
 #set loss terms weights
 lambda1 = 1
 lambda2 = 10
-#Set if MVE will be minimized
+#Define if MVE will be minimized
 MVE_on = True
 
 model = AE()
@@ -185,3 +183,4 @@ ntrain = 0
 
 # Model at best epoch
 # torch.save(best_model.state_dict(), saving_dir+"{}-MSE_MVE_model_weights.pth".format(ntrain))
+
