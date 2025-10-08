@@ -67,32 +67,33 @@ Mode_2 = 1 * np.sin(2 * np.pi * Z)
 #Modes for the stream function
 Mode_3 = np.sin(np.pi * a * X) * np.sin(np.pi * Z)
 
-#%%
-#plot modes
-# fig = plt.figure()
-# ax = fig.add_subplot(1,1,1, projection='3d')
-# surf1 = ax.plot_surface(X, Z, Mode_1, alpha=.5)
-# ax.set_xlabel("x")
-# ax.set_ylabel("z")
-# ax.set_zlabel(r"$\theta$", rotation=90)
-# plt.show()
+# %%
+plot modes
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1, projection='3d')
+surf1 = ax.plot_surface(X, Z, Mode_1, alpha=.5)
+ax.set_xlabel("x")
+ax.set_ylabel("z")
+ax.set_zlabel(r"$\theta$", rotation=90)
+plt.show()
 
-# fig = plt.figure()
-# ax = fig.add_subplot(1,1,1, projection='3d')
-# surf2 = ax.plot_surface(X, Z, Mode_2, alpha=.5)
-# ax.set_xlabel("x")
-# ax.set_ylabel("z")
-# ax.set_zlabel(r"$\theta$", rotation=90)
-# plt.show()
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1, projection='3d')
+surf2 = ax.plot_surface(X, Z, Mode_2, alpha=.5)
+ax.set_xlabel("x")
+ax.set_ylabel("z")
+ax.set_zlabel(r"$\theta$", rotation=90)
+plt.show()
 
-# fig = plt.figure()
-# ax = fig.add_subplot(1,1,1, projection='3d')
-# surf2 = ax.plot_surface(X, Z, Mode_3, alpha=.5)
-# ax.set_xlabel("x")
-# ax.set_ylabel("z")
-# ax.set_zlabel(r"$\theta$", rotation=90)
-# plt.show()
-#%% We create the images of the temperature and the stream function
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1, projection='3d')
+surf2 = ax.plot_surface(X, Z, Mode_3, alpha=.5)
+ax.set_xlabel("x")
+ax.set_ylabel("z")
+ax.set_zlabel(r"$\theta$", rotation=90)
+plt.show()
+
+# %% We create the images of the temperature and the stream function
 
 #Temperature images
 ims = []
@@ -107,21 +108,7 @@ for k in range(len(x)):
 
 ims = np.array(ims)
 ims_velocidad = np.array(ims_velocidad)
-#%%
-# tt = 10
 
-# fig, ax = plt.subplots(ncols=1, constrained_layout=True)
-# ax.imshow(ims[tt], cmap='gray', origin='lower')
-# ax.set_xlabel("x")
-# ax.set_ylabel("z")
-# plt.show()
-
-
-# fig, ax = plt.subplots(ncols=1, constrained_layout=True)
-# ax.imshow(ims_velocidad[tt], cmap='gray', origin='lower')
-# ax.set_xlabel("x")
-# ax.set_ylabel("z")
-# plt.show()
 #%% We create the full data, both frames put together
 x_data = []
 for k in range(len(ims)):
@@ -131,3 +118,4 @@ print(x_data.shape)
 #%%
 save_folder = '.../'
 # np.save(save_folder+"lorenz_movie_XYZ.npy", x_data)    
+
